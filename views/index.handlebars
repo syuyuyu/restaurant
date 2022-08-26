@@ -20,6 +20,7 @@
 
 <!-- restaurant list -->
 <div class="container mt-5 d-flex justify-content-center mb-5">
+  {{#if restaurant}}
   <div class="col-8">
     <div class="row row-cols-3 g-4">
       {{#each restaurant}}
@@ -41,4 +42,11 @@
       {{/each}}
     </div>
   </div>
+  {{else}}
+  <div>
+    <h1>
+      很抱歉，搜尋不到您的關鍵字
+    </h1>
+  </div>
+  {{/if}}
 </div>

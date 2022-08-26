@@ -20,12 +20,7 @@ app.get('/', (req, res) => {
 app.get('/search/', (req, res) => {
   const keyword = req.query.keyword
   const filter_restaurant = restaurant_list.results.filter(item => item.name.toLowerCase().includes(keyword.trim().toLowerCase()) || item.category.includes(keyword.trim()))
-  //加入搜尋不到頁面
-  if (filter_restaurant == '') {
-    res.render('noResult', { keyword: keyword })
-  } else {
-    res.render('index', { restaurant: filter_restaurant, keyword })
-  }
+  res.render('index', { restaurant: filter_restaurant, keyword })
 })
 
 //show
